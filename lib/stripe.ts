@@ -1,10 +1,5 @@
-// lib/stripe.ts
-import Stripe from 'stripe';
+import "server-only"
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY is not set');
-}
+import Stripe from "stripe"
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2024-06-20' as any
-});
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
